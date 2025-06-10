@@ -1,0 +1,7 @@
+layout:
+  - Kick
+  - Offset
+  - trim
+  - stack2
+  - check_lic
+#collapsed: true
