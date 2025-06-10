@@ -21,17 +21,19 @@ uidoc = __revit__.ActiveUIDocument
 doc = __revit__.ActiveUIDocument.Document
 app = __revit__.Application
 
+def CollectElements(arry):
+    elem = List[Element]()
+    for i in arry:
+        elem.Add(i)
+    return elem
 
 t = Transaction(doc, __title__)
 t.Start()
 try:
-    time_start = time.time()
+
     check = LicenseChecker.CheckLicenseGranted(app)
     # check = True
     if check:
-        time_end = time.time()
-        print("Time: ", time_end - time_start)
-
         angle = 0
         pin_conduits = revit.get_selection().elements
 
