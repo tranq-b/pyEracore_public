@@ -1,5 +1,5 @@
-__title__ = "check_lic"
-__author__ = "MyPy"
+__title__ = "Check License"
+__author__ = "pyEracore"
 __doc__ = """
 SAMPLE TEXT
 """

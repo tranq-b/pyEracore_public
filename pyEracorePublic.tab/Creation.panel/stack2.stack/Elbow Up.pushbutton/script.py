@@ -1,5 +1,5 @@
 __title__ = "Elbow Up"
-__author__ = "MyPy"
+__author__ = "pyEracore"
 __doc__ = """
 SAMPLE TEXT
 """
