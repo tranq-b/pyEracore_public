@@ -8,7 +8,7 @@ SAMPLE TEXT
 import clr, os, traceback
 from System.Collections.Generic import List
 from pyrevit import revit, forms
-from Autodesk.Revit.DB import Transaction, Element
+from Autodesk.Revit.DB import Transaction, Element, Line, ElementTransformUtils
 from rpw.ui.forms import FlexForm, Label, TextBox, Button, Separator, CheckBox
 import time
 
@@ -37,6 +37,11 @@ try:
         angle = 0
         pin_conduits = revit.get_selection().elements
 
+
+        def CenterPoint(element):
+            box = element.get_BoundingBox(doc.ActiveView)
+            center = (box.Max + box.Min) / 2
+            return center
 
         def angle5(sender, e):
             global angle
@@ -103,22 +108,52 @@ try:
             forms.alert("Please select a one conduit", exitscript=True)
 
         if angle > 0:
-            if len(pin_conduits) == 1:
-                second_conduits = revit.pick_element()
-            else:
-                second_conduits = revit.pick_elements()
-
+            second_conduits = revit.pick_elements()
 
             if second_conduits:
-                if len(pin_conduits) == 1:
-                    CustomFunctions.CreateOffset(pin_conduits[0], second_conduits, angle, doc)
+                if len(pin_conduits) != len(second_conduits):
+                    forms.alert("The quantity of conduits not match")
                 else:
-                    if len(pin_conduits) != len(second_conduits):
-                        forms.alert("The quantity of conduits not match")
+                    if len(pin_conduits) > 1:
+                        pairs = CustomFunctions.PairParallelElements(CollectElements(pin_conduits),
+                                                                     CollectElements(second_conduits), app)
                     else:
-                        pairs = CustomFunctions.PairParallelElements(CollectElements(pin_conduits), CollectElements(second_conduits), app)
-                        for pair in pairs:
-                            CustomFunctions.CreateOffset(pair[0], pair[1], angle, doc, app)
+                        pairs = [[pin_conduits[0], second_conduits[0]]]
+                    closest_pair = {}
+                    for pair in pairs:
+                        element1 = pair[0]
+                        element2 = pair[1]
+                        connectors1 = list(element1.ConnectorManager.Connectors)
+                        connectors2 = list(element2.ConnectorManager.Connectors)
+
+                        closest_connectors = min(
+                            ((connector1, connector2, connector1.Origin.DistanceTo(connector2.Origin)) for connector1 in
+                             connectors1 for connector2 in connectors2), key=lambda x: x[2])
+
+                        length = closest_connectors[0].Origin.DistanceTo(closest_connectors[1].Origin)
+                        closest_pair[length] = [closest_connectors[0], closest_connectors[1]]
+
+                    min_distance = min(closest_pair.keys())
+                    min_pair = closest_pair[min_distance]
+                    mid_point = (min_pair[0].Origin + min_pair[1].Origin) / 2
+
+                    element1_point = CenterPoint(pairs[0][0])
+                    element2_point = CenterPoint(pairs[0][1])
+
+                    element1_direction = pairs[0][0].Location.Curve.Direction
+
+                    temp_line = Line.CreateUnbound(element1_point, element1_direction)
+                    temp_point = temp_line.Project(element2_point).XYZPoint
+
+                    perpendicular_vector = Line.CreateBound(temp_point, element2_point).Direction
+
+                    perpendicular_line = Line.CreateUnbound(mid_point, perpendicular_vector)
+
+                    for pair in pairs:
+                        new_element = CustomFunctions.CreateOffset(pair[0], pair[1], angle, doc, app)
+                        center = CenterPoint(new_element)
+                        new_point = perpendicular_line.Project(center).XYZPoint
+                        ElementTransformUtils.MoveElement(doc, new_element.Id, new_point - center)
 
 
     t.Commit()
