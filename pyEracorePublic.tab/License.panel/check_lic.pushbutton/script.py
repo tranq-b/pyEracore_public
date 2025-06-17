@@ -25,11 +25,6 @@ if not check:
     print("Send the your User Id to IT Depratment:\n"
                       "Your UserID: {}".format(app.LoginUserId))
 
-
-
-    # res = forms.alert("Send the your User Id to IT Depratment:\n"
-    #                   "Your UserID: {}".format(app.LoginUserId),
-    #                   ok=True, yes=False, no=False, warn_icon=False)
 else:
     res = forms.alert("Access Granted",
                       ok=True, yes=False, no=False, warn_icon=False)
