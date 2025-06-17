@@ -10,7 +10,7 @@ from System.Collections.Generic import List
 from pyrevit import revit, forms
 from Autodesk.Revit.DB import Transaction, Element, Line, ElementTransformUtils
 from rpw.ui.forms import FlexForm, Label, TextBox, Button, Separator, CheckBox
-import time
+
 
 dll_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", "bin", "RevitPluginLib.dll"))
 clr.AddReference(dll_path)
@@ -32,7 +32,6 @@ t.Start()
 try:
 
     check = LicenseChecker.CheckLicenseGranted(app)
-    # check = True
     if check:
         angle = 0
         pin_conduits = revit.get_selection().elements

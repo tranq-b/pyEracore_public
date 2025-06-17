@@ -18,25 +18,6 @@ doc = __revit__.ActiveUIDocument.Document
 app = __revit__.Application
 
 
-# def align_horizontal_to_view(elements, target_pt):
-#
-#     view = uidoc.ActiveView
-#     up_dir = view.UpDirection.Normalize()
-#
-#     for el in elements:
-#         loc = el.Location
-#         if isinstance(loc, LocationPoint):
-#             p = loc.Point
-#         elif isinstance(loc, LocationCurve):
-#             c = loc.Curve
-#             p = (c.GetEndPoint(0) + c.GetEndPoint(1)) * 0.5
-#         else:
-#             continue
-#         delta = target_pt - p
-#         dist = delta.DotProduct(up_dir)
-#         move = up_dir.Multiply(dist)
-#         ElementTransformUtils.MoveElement(doc, el.Id, move)
-
 check = LicenseChecker.CheckLicenseGranted(app)
 if check:
 
@@ -56,7 +37,6 @@ if check:
 
         CustomFunctions.AlignHorizontalToView(uidoc, elements_cs, point, app)
 
-        # align_horizontal_to_view(elements, point)
 
         t.Commit()
     except Exception as e:

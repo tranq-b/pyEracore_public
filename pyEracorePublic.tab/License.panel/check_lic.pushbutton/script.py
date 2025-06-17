@@ -6,9 +6,6 @@ SAMPLE TEXT
 
 import urllib2
 import os
-import json
-import random
-import string
 import clr
 from pyrevit import forms
 

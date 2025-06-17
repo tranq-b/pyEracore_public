@@ -4,9 +4,6 @@ __doc__ = """
 SAMPLE TEXT
 """
 
-# region inputs
-
-# from my_lib.import_all import *
 import clr, os, traceback
 from System.Collections.Generic import List
 from pyrevit import revit, forms
@@ -22,38 +19,14 @@ uidoc = __revit__.ActiveUIDocument
 doc = __revit__.ActiveUIDocument.Document
 app = __revit__.Application
 
-# endregion
+
 
 def CollectElements(arry):
-    """
-    Collects the IDs of elements from a given array.
 
-    This function iterates through each element in the given array, retrieves its ID,
-    and stores it in a list. The resulting list of IDs is then returned.
-
-    Parameters:
-        arry (List[Element]): A list of elements from which the IDs will be collected.
-
-    Returns:
-        List[ElementId]: A list containing the IDs of the elements passed in the input array.
-    """
     elem = List[Element]()
     for i in arry:
         elem.Add(i)
     return elem
-
-
-# def are_perpendicular(vector1, vector2):
-#     # Calculate the dot product
-#     dot_product = (vector1[0] * vector2[0] +
-#                    vector1[1] * vector2[1] +
-#                    vector1[2] * vector2[2])
-#
-#     # Check if the dot product is close to zero
-#     return abs(dot_product) < 1e-6  # Tolerance for floating-point precision
-
-
-
 
 t = Transaction(doc, __title__)
 t.Start()
