@@ -4,11 +4,10 @@ __doc__ = """
 SAMPLE TEXT
 """
 
-
 import clr, os, traceback
 from System.Collections.Generic import List
 from pyrevit import revit, forms
-from Autodesk.Revit.DB import Transaction, Element
+from Autodesk.Revit.DB import Transaction, Element, Line, ElementTransformUtils
 from rpw.ui.forms import FlexForm, Label, TextBox, Button, Separator, CheckBox
 
 dll_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", "bin", "RevitPluginLib.dll"))
@@ -19,6 +18,20 @@ from RevitPluginLib import CustomFunctions, LicenseChecker
 uidoc = __revit__.ActiveUIDocument
 doc = __revit__.ActiveUIDocument.Document
 app = __revit__.Application
+
+
+def CenterPoint(element):
+    box = element.get_BoundingBox(doc.ActiveView)
+    center = (box.Max + box.Min) / 2
+    return center
+
+
+def CollectElements(arry):
+    elem = List[Element]()
+    for i in arry:
+        elem.Add(i)
+    return elem
+
 
 t = Transaction(doc, __title__)
 t.Start()
@@ -100,6 +113,7 @@ try:
 
                         for pair in pairs:
                             new_element = CustomFunctions.CreateOffset(pair[0], pair[1], angle, doc, app)
+                            doc.Regenerate()
                             center = CenterPoint(new_element)
                             new_point = perpendicular_line.Project(center).XYZPoint
                             ElementTransformUtils.MoveElement(doc, new_element.Id, new_point - center)
@@ -116,6 +130,7 @@ try:
                         new_point = (closest_connectors[0].Origin + closest_connectors[1].Origin) / 2
 
                         new_element = CustomFunctions.CreateOffset(pairs[0][0], pairs[0][1], angle, doc, app)
+                        doc.Regenerate()
                         center = CenterPoint(new_element)
 
                         ElementTransformUtils.MoveElement(doc, new_element.Id, new_point - center)
