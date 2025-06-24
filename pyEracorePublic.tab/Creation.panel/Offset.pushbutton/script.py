@@ -4,13 +4,12 @@ __doc__ = """
 SAMPLE TEXT
 """
 
-from my_lib.import_all import *
+
 import clr, os, traceback
 from System.Collections.Generic import List
 from pyrevit import revit, forms
 from Autodesk.Revit.DB import Transaction, Element
 from rpw.ui.forms import FlexForm, Label, TextBox, Button, Separator, CheckBox
-import time
 
 dll_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", "bin", "RevitPluginLib.dll"))
 clr.AddReference(dll_path)
