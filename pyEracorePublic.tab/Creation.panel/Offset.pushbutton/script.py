@@ -113,6 +113,8 @@ try:
 
                         for pair in pairs:
                             new_element = CustomFunctions.CreateOffset(pair[0], pair[1], angle, doc, app)
+                            if not new_element:
+                                new_element = CustomFunctions.CreateOffset(pair[1], pair[0], angle, doc, app)
                             doc.Regenerate()
                             center = CenterPoint(new_element)
                             new_point = perpendicular_line.Project(center).XYZPoint
@@ -130,6 +132,8 @@ try:
                         new_point = (closest_connectors[0].Origin + closest_connectors[1].Origin) / 2
 
                         new_element = CustomFunctions.CreateOffset(pairs[0][0], pairs[0][1], angle, doc, app)
+                        if not new_element:
+                            new_element = CustomFunctions.CreateOffset(pairs[0][1], pairs[0][0], angle, doc, app)
                         doc.Regenerate()
                         center = CenterPoint(new_element)
 
