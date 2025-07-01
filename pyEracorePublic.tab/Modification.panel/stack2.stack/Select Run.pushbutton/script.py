@@ -27,7 +27,18 @@ if check:
 
         elements_cs = List[Element]()
         for el in elements:
-            elements_cs.Add(el)
+            if el.Category.Name == "Conduits":
+                elements_cs.Add(el)
+            elif el.Category.Name == "Conduit Fittings":
+                name = el.Name
+                family = el.Symbol.Family.Name
+                if (
+                        "elbow" in name.lower() or
+                        "bend" in name.lower() or
+                        "elbow" in family.lower() or
+                        "bend" in family.lower()
+                ):
+                    elements_cs.Add(el)
 
         CustomFunctions.SelectRun(uidoc, doc, elements_cs, app)
 
