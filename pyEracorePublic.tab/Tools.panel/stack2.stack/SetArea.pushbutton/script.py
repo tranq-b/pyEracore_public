@@ -1,5 +1,26 @@
 __title__ = "SetArea"
+__author__ = "pyEracore"
+__doc__ = """
+1. Description:
+This script copies a parameter value from selected scope boxes or floors to all elements inside or intersecting them, by matching a “get” parameter from the box/floor to a “set” parameter on other elements.
 
+2. Steps to use:
+
+    - Run the script.
+    
+    - Select the category to use as bounding elements (Scope Boxes or Floors).
+    
+    - Pick one or multiple scope boxes (or all floors in view).
+    
+    - Choose the parameter to read from the selected boxes/floors.
+    
+    - Choose the parameter to write this value to on the elements in the view.
+    
+    - The script will assign the value to elements that are either inside the bounding box (for scope boxes) or intersect with floors.
+
+3. Result:
+All elements within the selected scope boxes or intersecting the selected floors will have their specified parameter updated with the value from the chosen parameter of the box or floor.
+"""
 import os, clr, traceback, sys
 from Autodesk.Revit.DB import FilteredElementCollector, BuiltInCategory, Transaction, Element
 from pyrevit import revit, forms

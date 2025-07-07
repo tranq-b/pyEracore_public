@@ -1,7 +1,23 @@
 __title__ = "Export NWC"
 __author__ = "Andrey.B"
 __doc__ = """
-SAMPLE TEXT
+1. Description:
+This script exports selected Revit views to Navisworks NWC files. It remembers the last export folder and allows choosing between internal or shared coordinates.
+
+2. Steps to use:
+
+    - Select the views in Revit that you want to export.
+    
+    - Run the script.
+    
+    - Choose whether to use the last saved folder or select a new folder for the export.
+    
+    - Pick if you want to export with internal or shared coordinates.
+    
+    - The script will process each view and export it as an NWC file.
+
+3. Result:
+Each selected view will be exported as a separate NWC file into the chosen folder. If a view has no geometry, it will be skipped, and a message will appear in the console.
 """
 
 import os, clr, traceback, sys

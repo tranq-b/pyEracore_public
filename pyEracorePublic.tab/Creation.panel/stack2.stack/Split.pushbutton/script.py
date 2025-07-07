@@ -1,7 +1,21 @@
 __title__ = "Split Conduits"
 __author__ = "pyEracore"
 __doc__ = """
-SAMPLE TEXT
+1. Description:
+This script splits selected conduit elements using a user-defined 3D box, cutting the conduits where they intersect the box.
+
+2. Steps to use:
+
+    - Run the script.
+    
+    - Draw a rectangle in the view to select conduit elements inside it.
+    
+    - Define a 3D split box in the model.
+    
+    - The script will process each selected conduit and split it at the intersection with the box.
+
+3. Result:
+All selected conduits that intersect the split box will be divided into separate segments at the intersection points.
 """
 
 

@@ -1,7 +1,19 @@
 __title__ = "Select Run"
 __author__ = "MyPy"
 __doc__ = """
-SAMPLE TEXT
+1. Description:
+This script highlights and selects the entire conduit run starting from the selected conduits or bends (elbows). It processes conduits and conduit fittings that are identified as part of bends.
+
+2. Steps to use:
+
+    - Select one or more conduits or elbows in the model.
+    
+    - Run the script.
+    
+    - The script will automatically find and select the full connected conduit run.
+
+3. Result:
+The entire conduit run connected to the selected elements will be highlighted and selected, making it easy to review or manipulate the full pathway.
 """
 
 from Autodesk.Revit.DB import ElementId, Transaction, Element

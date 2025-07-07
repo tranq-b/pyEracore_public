@@ -1,7 +1,19 @@
 __title__ = "Connect Selected"
 __author__ = "Andrey.B"
 __doc__ = """
-Creates connections exclusively between the currently selected elements.
+1. Description:
+This script automatically connects selected elements (such as conduits) to each other if they are within 0.5 ft, ensuring connections only happen between the selected elements.
+
+2. Steps to use:
+
+    - Select multiple elements in the model that you want to connect together.
+    
+    - Run the script.
+    
+    - The script will scan all selected elements and attempt to connect them to other selected elements within 0.5 ft.
+
+3. Result:
+All selected elements that are close enough will be connected to each other, improving model continuity by automatically creating join connections only among the selected set.
 """
 
 import os, clr, traceback

@@ -1,7 +1,19 @@
 __title__ = "Multi-Trim"
 __author__ = "pyEracore"
 __doc__ = """
-SAMPLE TEXT
+1. Description:
+This script trims multiple selected conduits so they intersect or meet cleanly, similar to a trim operation in CAD.
+
+2. Steps to use:
+
+    - Select at least two conduit elements in the model.
+    
+    - Run the script.
+    
+    - The script will automatically trim the selected conduits where they intersect.
+
+3. Result:
+The selected conduits will be trimmed to intersect or align precisely at their nearest points, cleaning up overlapping geometry.
 """
 
 from Autodesk.Revit.DB import Transaction

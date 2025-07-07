@@ -1,5 +1,31 @@
 __title__ = "Transfer Info"
+__author__ = "MyPy"
+__doc__ = """
+1. Description:
+This script copies parameters from a selected “source” element to multiple “target” elements. You can pick the parameters manually or load them from a previously saved list. The script supports two modes: bulk selection or repeated element pairing, with optional propagation along runs.
 
+2. Steps to use:
+
+    - Run the script.
+    
+    - Choose whether to manually select parameters or load them from a saved file.
+    
+    - Pick the first (source) element whose parameters you want to copy.
+    
+    - Select your working mode:
+    
+    - Single start & multi-element finish: pick multiple elements to copy to in one step.
+    
+    - Repeated selection: repeatedly pick target elements (or runs) until you press ESC.
+    
+    - Optionally enable “Fill In” to apply parameters along connected runs.
+    
+    - The script will copy the chosen parameters from the source to the targets.
+
+3. Result:
+The selected parameters will be copied from the source element to all chosen target elements (or runs). Elements temporarily highlight in green during the process for visual feedback.
+
+"""
 import ast
 import os, clr, traceback
 from Autodesk.Revit.DB import FilteredElementCollector, Options, Transform, Transaction, Color, Element, OverrideGraphicSettings
@@ -92,15 +118,31 @@ if check:
                 for parameter in get_parameter:
                     set_parameter = Element.LookupParameter(element1, parameter)
                     for element in elements:
-                        try:
-                            if str(set_parameter.StorageType) == "String":
-                                Element.LookupParameter(element, parameter).Set(set_parameter.AsString())
-                            elif str(set_parameter.StorageType) == "Double":
-                                Element.LookupParameter(element, parameter).Set(set_parameter.AsDouble())
-                            elif str(set_parameter.StorageType) == "Integer":
-                                Element.LookupParameter(element, parameter).Set(set_parameter.AsInteger())
-                        except:
-                            pass
+                        if switches["Fill In"]:
+                            elements_cs = List[Element]()
+                            for el in [element]:
+                                elements_cs.Add(el)
+                            run = CustomFunctions.SortToRuns(elements_cs, app)
+                            for element in run[0]:
+                                try:
+                                    if str(set_parameter.StorageType) == "String":
+                                        Element.LookupParameter(element, parameter).Set(set_parameter.AsString())
+                                    elif str(set_parameter.StorageType) == "Double":
+                                        Element.LookupParameter(element, parameter).Set(set_parameter.AsDouble())
+                                    elif str(set_parameter.StorageType) == "Integer":
+                                        Element.LookupParameter(element, parameter).Set(set_parameter.AsInteger())
+                                except:
+                                    pass
+                        else:
+                            try:
+                                if str(set_parameter.StorageType) == "String":
+                                    Element.LookupParameter(element, parameter).Set(set_parameter.AsString())
+                                elif str(set_parameter.StorageType) == "Double":
+                                    Element.LookupParameter(element, parameter).Set(set_parameter.AsDouble())
+                                elif str(set_parameter.StorageType) == "Integer":
+                                    Element.LookupParameter(element, parameter).Set(set_parameter.AsInteger())
+                            except:
+                                pass
 
                 # Commit the transaction
                 t.Commit()

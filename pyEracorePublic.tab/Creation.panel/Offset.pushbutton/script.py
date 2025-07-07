@@ -1,7 +1,23 @@
 __title__ = "Offset"
 __author__ = "MyPy"
 __doc__ = """
-SAMPLE TEXT
+1. Description:
+This script creates offset conduit runs with a specified angle between selected conduits. It pairs and offsets either a single pair of conduits or multiple parallel conduits, aligning them and automatically inserting the kick angle.
+
+2. Steps to use:
+
+    - Select one or multiple conduits in the model.
+    
+    - Run the script.
+    
+    - In the pop-up window, choose the desired kick angle (5°, 10°, 15°, etc.).
+    
+    - Select the second conduit (or conduits) to connect.
+    
+    - The script will pair conduits by proximity and create offsets.
+
+3. Result:
+New conduit segments will be created at the specified angle between the selected conduits. The script ensures that the offset segments are positioned correctly along a calculated perpendicular line for optimal alignment.
 """
 
 import clr, os, traceback

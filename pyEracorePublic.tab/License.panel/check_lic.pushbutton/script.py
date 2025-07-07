@@ -1,7 +1,19 @@
 __title__ = "Check License"
 __author__ = "pyEracore"
 __doc__ = """
-SAMPLE TEXT
+1. Description:
+This script checks if your license is valid. It verifies access rights for the current Revit user by calling the license server.
+
+2. Steps to use:
+
+    - Run the script.
+    
+    - The script will automatically check your user license.
+    
+    - If your license is not granted, it will display your Revit User ID so you can send it to the IT department.
+
+3. Result:
+If the license is valid, you will see an “Access Granted” message. If not, you will get instructions to send your User ID to IT.
 """
 
 import urllib2

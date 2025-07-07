@@ -1,7 +1,23 @@
 __title__ = "Align Conduits"
 __author__ = "MyPy"
 __doc__ = """
-SAMPLE TEXT
+1. Description:
+This script aligns multiple selected conduits relative to a reference conduit using standard spacing rules. The reference conduit acts as the starting edge; all other conduits will be aligned on one side of it. The reference conduit must be at the edge of the conduit group — it cannot be located somewhere in the middle.
+
+2. Steps to use:
+
+    - Select the conduits you want to align.
+    
+    - Run the script.
+    
+    - Pick the edge conduit that will serve as the reference.
+    
+    - In the pop-up form, choose the spacing mode (Default Space, Between Side, or Between Center) and enter spacing values.
+    
+    - Confirm to apply alignment.
+
+3. Result:
+All selected conduits will be aligned on one side of the reference conduit according to the chosen spacing method and NEC-style spacing tables.
 """
 
 from Autodesk.Revit.DB import Transaction, FilteredElementCollector, BuiltInCategory, XYZ, IntersectionResultArray, Line, Element, ElementTransformUtils

@@ -2,7 +2,29 @@
 __title__ = "Sorting in Schedule +"
 __author__ = "Andrey.B"
 __doc__ = """
-SAMPLE TEXT
+1. Description:
+This script sorts selected elements based on a sequence of chosen parameters, assigns a unique sequential number to each combination of parameter values, and writes that number into a target parameter. It also supports rounding for numeric (length) parameters. You can run the script by selecting elements directly in the model or by selecting a column in a Revit schedule and launching it from there.
+
+2. Steps to use:
+
+    - Select elements in the model or select a column in a Revit schedule.
+    
+    - Run the script.
+    
+    - In the dialog, specify:
+    
+    - The number of sorting parameters (rows).
+    
+    - The parameters to sort by (multi-level sorting).
+    
+    - The rounding precision for length values.
+    
+    - The target parameter to store the generated numbering.
+    
+    - Confirm to run.
+
+3. Result:
+Each element will receive a unique sequential code in the chosen target parameter, based on its combination of selected parameter values. Identical combinations will share the same number, making it easier to group or filter in schedules.
 """
 
 import os, clr, traceback, sys, json

@@ -1,7 +1,19 @@
 __title__ = "Auto-Disconnect Nearby"
 __author__ = "Andrey.B"
 __doc__ = """
-Detaches all elements connected to the currently selected elements, leaving only the selected elements connected.
+1. Description:
+This script disconnects all immediate connections from the selected elements. It finds directly connected elements via connectors and breaks those links.
+
+2. Steps to use:
+
+    - Select the elements (such as conduits) you want to disconnect from their connected runs.
+    
+    - Run the script.
+    
+    - The script will process each selected element and disconnect it from adjacent connected elements.
+
+3. Result:
+The selected elements will no longer be connected to their neighboring elements, effectively isolating them in the model.
 """
 
 

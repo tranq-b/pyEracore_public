@@ -1,7 +1,19 @@
 __title__ = "Auto-Connect Nearby"
 __author__ = "Andrey.B"
 __doc__ = """
-Automatically connects all nearby elements that can potentially be connected to the selected elements.
+1. Description:
+This script automatically connects selected elements (typically conduits) to nearby elements within a 0.5 ft range, creating connections wherever possible.
+
+2. Steps to use:
+
+    - Select the elements in the model that you want to auto-connect.
+    
+    - Run the script.
+    
+    - The script will loop through each selected element and attempt to connect it to any nearby elements.
+
+3. Result:
+All selected elements will be connected to adjacent elements within a 0.5 ft distance, improving model continuity by automatically creating join connections.
 """
 
 

@@ -1,7 +1,19 @@
 __title__ = "Disconnect Selected"
 __author__ = "Andrey.B"
 __doc__ = """
-Disconnects only the currently selected elements from each other without affecting other connections.
+1. Description:
+This script disconnects all connections between the selected elements if they are within 0.5 ft of each other, effectively isolating them in the model.
+
+2. Steps to use:
+
+    - Select multiple elements in the model that you want to disconnect from each other.
+    
+    - Run the script.
+    
+    - The script will check for close connections among the selected elements and break them.
+
+3. Result:
+All selected elements will be disconnected from one another if they were previously joined within a 0.5 ft distance, leaving them individually isolated.
 """
 
 import os, clr, traceback

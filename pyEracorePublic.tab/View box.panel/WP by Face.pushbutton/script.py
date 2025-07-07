@@ -2,7 +2,19 @@
 __title__ = "WP by Face"
 __author__ = "Andrey.B"
 __doc__ = """
-SAMPLE TEXT
+1. Description:
+This script creates or sets a work plane in Revit based on the current view orientation and screen position, helping to quickly align the work plane to what you see.
+
+2. Steps to use:
+
+    - Open a 3D or plan view where you want to set the work plane.
+    
+    - Run the script.
+    
+    - The script will automatically create or adjust the work plane to match the current screen view.
+
+3. Result:
+The active work plane will be aligned to your current view, making it easier to start modeling or placing elements directly on that plane.
 """
 
 # from my_lib.import_all import *
@@ -29,20 +41,6 @@ if check:
     t.Start()
     try:
 
-        # view = doc.ActiveView
-        #
-        # def WorkPlaneByScreent(view):
-        #     if str(view.ViewType) == "ThreeD":
-        #         orient = view.GetOrientation()
-        #         point = orient.ForwardDirection
-        #
-        #
-        #         set_point = XYZ(0, 0, 1)
-        #         base_plane = DB.Plane.CreateByNormalAndOrigin(point, point)
-        #         sp = DB.SketchPlane.Create(revit.doc, base_plane)
-        #         revit.uidoc.ActiveView.SketchPlane = sp
-        #
-        # WorkPlaneByScreent(view)
         CustomFunctions.WorkPlaneByScreen(uidoc, app)
 
 

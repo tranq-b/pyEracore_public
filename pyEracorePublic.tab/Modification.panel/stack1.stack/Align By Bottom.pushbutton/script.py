@@ -1,4 +1,20 @@
 __title__ = "Align By Bottom"
+__author__ = "pyEracore"
+__doc__ = """
+1. Description:
+This script sets the "Bottom Elevation" parameter and reference level of selected elements to match a picked conduit.
+
+2. Steps to use:
+
+    - Select elements you want to update in the model.
+    
+    - Run the script.
+    
+    - Pick a conduit whose "Bottom Elevation" and level will be copied to the selected elements.
+
+3. Result:
+All selected elements will have their "Bottom Elevation" and reference level updated to match the chosen conduit.
+"""
 
 from Autodesk.Revit.DB import Transaction, ElementId, Element
 from pyrevit import revit

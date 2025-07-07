@@ -1,5 +1,22 @@
 __title__ = "Override Elements"
+__author__ = "MyPy"
+__doc__ = """
+1. Description:
+This script applies graphic overrides in the active view to highlight selected elements with custom colors, transparency, or halftone effects. It can also fade out all other elements to keep the focus on your selection.
 
+2. Steps to use:
+
+    - Select elements in the model that you want to highlight.
+    
+    - Run the script.
+    
+    - In the pop-up window, choose a highlight option (Blue, Green, Red, Halftone, Custom Color, or Reset Overrides) and whether to apply halftone or line overrides.
+    
+    - If you pick “Custom,” select any color from the color dialog.
+
+3. Result:
+The selected elements will be visually highlighted in the active view based on your chosen color and style. If “Halftone Other” is selected, all non-selected elements will appear faded, making your selection stand out.
+"""
 from pyrevit import revit, forms
 from Autodesk.Revit.DB import Transaction, FilteredElementCollector, OverrideGraphicSettings, Color, Element
 import os, clr, traceback

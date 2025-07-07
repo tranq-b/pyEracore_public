@@ -1,7 +1,19 @@
 __title__ = "Elbow Up"
 __author__ = "pyEracore"
 __doc__ = """
-SAMPLE TEXT
+1. Description:
+This script creates a vertical conduit segment with an elbow going upward from the end of each selected conduit that is closest to the picked point.
+
+2. Steps to use:
+
+    - Select one or more conduits in the model.
+    
+    - Run the script.
+    
+    - Pick a point in the model where you want the conduits to elbow up.
+
+3. Result:
+The script will add a vertical segment at the nearest end of each selected conduit, creating an elbow that bends upward toward the picked point.
 """
 
 # from my_lib.import_all import *

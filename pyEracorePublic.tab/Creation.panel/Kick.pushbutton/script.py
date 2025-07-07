@@ -1,7 +1,21 @@
 __title__ = "Kick"
 __author__ = "pyEracore"
 __doc__ = """
-SAMPLE TEXT
+1. Description:
+This script creates kick offsets (angle bends) between selected conduit elements at a specified angle. It helps to automatically align two sets of conduits by adding a kick with the chosen angle.
+
+2. Steps to use:
+
+    - Select the first set of conduit elements in Revit.
+    
+    - Run the script.
+    
+    - In the pop-up window, choose the desired angle for the kick (e.g. 5°, 15°, 45°, etc.).
+    
+    - Select the second set of conduit elements that need to be aligned.
+
+3. Result:
+The script will pair non-parallel conduits from the two selections and create kick offsets at the specified angle, automatically connecting them with proper bends.
 """
 
 import clr, os, traceback

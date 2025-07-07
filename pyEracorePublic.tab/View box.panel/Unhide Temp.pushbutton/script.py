@@ -1,7 +1,19 @@
 __title__ = "Unhide Selected"
 __author__ = "Andrey.B"
 __doc__ = """
-SAMPLE TEXT
+1. Description:
+This script resets the temporary hide/isolate mode in the active view and then temporarily isolates the selected elements together with all other currently visible elements. It is useful for quickly refocusing on your selected elements without losing the context of the existing view state.
+
+2. Steps to use:
+
+    - Select elements in the active view that you want to emphasize.
+    
+    - Run the script.
+    
+    - The script will first disable any existing temporary hide/isolate mode and then isolate your selection plus all currently visible elements.
+
+3. Result:
+The view will switch to a temporary isolate mode showing only your selected elements and everything that was already visible, helping you focus on these elements while hiding others.
 """
 
 from pyrevit import revit
