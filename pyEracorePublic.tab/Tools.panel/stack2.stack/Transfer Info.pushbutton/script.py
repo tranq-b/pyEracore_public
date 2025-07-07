@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 __title__ = "Transfer Info"
 __author__ = "pyEracore"
 __doc__ = """
