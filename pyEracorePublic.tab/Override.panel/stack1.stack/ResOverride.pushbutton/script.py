@@ -1,5 +1,5 @@
 __title__ = "Restore Override"
-__author__ = "MyPy"
+__author__ = "pyEracore"
 __doc__ = """
 1. Description:
 This script clears all graphic overrides in the active view for the selected elements. If no elements are selected, it will clear overrides for all elements in the current view.

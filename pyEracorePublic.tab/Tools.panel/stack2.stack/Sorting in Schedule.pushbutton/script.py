@@ -1,6 +1,6 @@
 
 __title__ = "Sorting in Schedule +"
-__author__ = "Andrey.B"
+__author__ = "pyEracore"
 __doc__ = """
 1. Description:
 This script sorts selected elements based on a sequence of chosen parameters, assigns a unique sequential number to each combination of parameter values, and writes that number into a target parameter. It also supports rounding for numeric (length) parameters. You can run the script by selecting elements directly in the model or by selecting a column in a Revit schedule and launching it from there.

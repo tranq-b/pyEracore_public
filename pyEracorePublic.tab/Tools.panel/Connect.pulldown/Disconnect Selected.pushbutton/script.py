@@ -1,5 +1,5 @@
 __title__ = "Disconnect Selected"
-__author__ = "Andrey.B"
+__author__ = "pyEracore"
 __doc__ = """
 1. Description:
 This script disconnects all connections between the selected elements if they are within 0.5 ft of each other, effectively isolating them in the model.

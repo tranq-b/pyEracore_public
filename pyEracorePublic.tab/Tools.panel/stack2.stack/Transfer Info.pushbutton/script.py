@@ -1,5 +1,5 @@
 __title__ = "Transfer Info"
-__author__ = "MyPy"
+__author__ = "pyEracore"
 __doc__ = """
 1. Description:
 This script copies parameters from a selected “source” element to multiple “target” elements. You can pick the parameters manually or load them from a previously saved list. The script supports two modes: bulk selection or repeated element pairing, with optional propagation along runs.

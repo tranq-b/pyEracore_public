@@ -1,5 +1,5 @@
 __title__ = "AVP"
-__author__ = "MyPy"
+__author__ = "pyEracore"
 __doc__ = """
 This plugin aligns elements vertically based on a point selected in the model. Each element's center is moved to the closest vertical position relative to the screen, matching the selected point's vertical screen alignment.
 """

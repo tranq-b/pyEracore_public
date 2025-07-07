@@ -1,5 +1,5 @@
 __title__ = "Offset"
-__author__ = "MyPy"
+__author__ = "pyEracore"
 __doc__ = """
 1. Description:
 This script creates offset conduit runs with a specified angle between selected conduits. It pairs and offsets either a single pair of conduits or multiple parallel conduits, aligning them and automatically inserting the kick angle.

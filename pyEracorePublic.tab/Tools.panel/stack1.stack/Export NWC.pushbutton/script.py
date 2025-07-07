@@ -1,5 +1,5 @@
 __title__ = "Export NWC"
-__author__ = "Andrey.B"
+__author__ = "pyEracore"
 __doc__ = """
 1. Description:
 This script exports selected Revit views to Navisworks NWC files. It remembers the last export folder and allows choosing between internal or shared coordinates.

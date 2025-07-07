@@ -1,5 +1,5 @@
 __title__ = "Auto-Connect Nearby"
-__author__ = "Andrey.B"
+__author__ = "pyEracore"
 __doc__ = """
 1. Description:
 This script automatically connects selected elements (typically conduits) to nearby elements within a 0.5 ft range, creating connections wherever possible.

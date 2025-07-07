@@ -1,5 +1,5 @@
 __title__ = "Connect Selected"
-__author__ = "Andrey.B"
+__author__ = "pyEracore"
 __doc__ = """
 1. Description:
 This script automatically connects selected elements (such as conduits) to each other if they are within 0.5 ft, ensuring connections only happen between the selected elements.

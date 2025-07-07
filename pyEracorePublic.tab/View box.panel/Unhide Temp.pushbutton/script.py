@@ -1,5 +1,5 @@
 __title__ = "Unhide Selected"
-__author__ = "Andrey.B"
+__author__ = "pyEracore"
 __doc__ = """
 1. Description:
 This script resets the temporary hide/isolate mode in the active view and then temporarily isolates the selected elements together with all other currently visible elements. It is useful for quickly refocusing on your selected elements without losing the context of the existing view state.

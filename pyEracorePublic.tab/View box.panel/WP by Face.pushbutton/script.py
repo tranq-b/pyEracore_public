@@ -1,6 +1,6 @@
 
 __title__ = "WP by Face"
-__author__ = "Andrey.B"
+__author__ = "pyEracore"
 __doc__ = """
 1. Description:
 This script creates or sets a work plane in Revit based on the current view orientation and screen position, helping to quickly align the work plane to what you see.

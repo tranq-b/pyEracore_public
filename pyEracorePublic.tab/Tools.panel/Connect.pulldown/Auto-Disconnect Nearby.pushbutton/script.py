@@ -1,5 +1,5 @@
 __title__ = "Auto-Disconnect Nearby"
-__author__ = "Andrey.B"
+__author__ = "pyEracore"
 __doc__ = """
 1. Description:
 This script disconnects all immediate connections from the selected elements. It finds directly connected elements via connectors and breaks those links.

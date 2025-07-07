@@ -1,5 +1,5 @@
 __title__ = "Select Run"
-__author__ = "MyPy"
+__author__ = "pyEracore"
 __doc__ = """
 1. Description:
 This script highlights and selects the entire conduit run starting from the selected conduits or bends (elbows). It processes conduits and conduit fittings that are identified as part of bends.
