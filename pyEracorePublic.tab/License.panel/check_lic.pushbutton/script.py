@@ -13,7 +13,7 @@ This script checks if your license is valid. It verifies access rights for the c
     - If your license is not granted, it will display your Revit User ID so you can send it to the IT department.
 
 3. Result:
-If the license is valid, you will see an “Access Granted” message. If not, you will get instructions to send your User ID to IT.
+If the license is valid, you will see an "Access Granted" message. If not, you will get instructions to send your User ID to IT.
 """
 
 import urllib2
