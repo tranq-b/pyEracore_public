@@ -2,7 +2,7 @@ __title__ = "Align Conduits"
 __author__ = "pyEracore"
 __doc__ = """
 1. Description:
-This script aligns multiple selected conduits relative to a reference conduit using standard spacing rules. The reference conduit acts as the starting edge; all other conduits will be aligned on one side of it. The reference conduit must be at the edge of the conduit group — it cannot be located somewhere in the middle.
+This script aligns multiple selected conduits relative to a reference conduit using standard spacing rules. The reference conduit acts as the starting edge all other conduits will be aligned on one side of it. The reference conduit must be at the edge of the conduit group — it cannot be located somewhere in the middle.
 
 2. Steps to use:
 
