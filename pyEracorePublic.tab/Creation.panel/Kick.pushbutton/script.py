@@ -10,7 +10,7 @@ This script creates kick offsets (angle bends) between selected conduit elements
     
     - Run the script.
     
-    - In the pop-up window, choose the desired angle for the kick (e.g. 5°, 15°, 45°, etc.).
+    - In the pop-up window, choose the desired angle for the kick (e.g. 5, 15, 45, etc.).
     
     - Select the second set of conduit elements that need to be aligned.
 
