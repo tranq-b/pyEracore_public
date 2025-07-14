@@ -12,7 +12,7 @@ This script applies graphic overrides in the active view to highlight selected e
     
     - In the pop-up window, choose a highlight option (Blue, Green, Red, Halftone, Custom Color, or Reset Overrides) and whether to apply halftone or line overrides.
     
-    - If you pick “Custom,” select any color from the color dialog.
+    - If you pick "Custom," select any color from the color dialog.
 
 3. Result:
 The selected elements will be visually highlighted in the active view based on your chosen color and style. If “Halftone Other” is selected, all non-selected elements will appear faded, making your selection stand out.
