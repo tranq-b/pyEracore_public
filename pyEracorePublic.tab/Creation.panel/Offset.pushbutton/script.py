@@ -10,7 +10,7 @@ This script creates offset conduit runs with a specified angle between selected 
     
     - Run the script.
     
-    - In the pop-up window, choose the desired kick angle (5°, 10°, 15°, etc.).
+    - In the pop-up window, choose the desired kick angle (5, 10, 15, etc.).
     
     - Select the second conduit (or conduits) to connect.
     
