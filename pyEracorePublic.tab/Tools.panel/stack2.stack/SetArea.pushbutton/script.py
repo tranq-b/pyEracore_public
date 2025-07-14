@@ -2,7 +2,7 @@ __title__ = "SetArea"
 __author__ = "pyEracore"
 __doc__ = """
 1. Description:
-This script copies a parameter value from selected scope boxes or floors to all elements inside or intersecting them, by matching a "get" parameter from the box/floor to a “set” parameter on other elements.
+This script copies a parameter value from selected scope boxes or floors to all elements inside or intersecting them, by matching a "get" parameter from the box/floor to a "set" parameter on other elements.
 
 2. Steps to use:
 
